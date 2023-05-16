@@ -1,0 +1,29 @@
+class MSpeciesEntity {
+  static const String id = 'id';
+  static const String code = 'code';
+  static const String ncbiCode = 'ncbi_code';
+  static const String mBioClassId = 'm_bio_class_id';
+  static const String mBioClassName = 'm_bio_class_name';
+  static const String bioCategory = 'bio_category';
+  static const String mBioFamilyId = 'm_bio_family_id';
+  static const String mBioFamilyName = 'm_bio_family_name';
+  static const String mHabitusId = 'm_habitus_id';
+  static const String mHabitusName = 'm_habitus_name';
+  static const String latinName = 'latin_name';
+  static const String inaName = 'ina_name';
+  static const String engName = 'eng_name';
+  static const String mPrmDietId = 'm_prm_diet_id';
+  static const String cites = 'cites';
+  static const String mCompanyCode = 'm_company_code';
+  static const String description = 'description';
+  static const String iucn = 'iucn';
+  static const String govRulePp = 'gov_rule_pp';
+  static const String govRulePermenlhk106 = 'gov_rule_permenlhk106';
+  static const String endemism = 'endemism';
+  static const String imageUrl = 'image_url';
+  static const String convention = 'convention';
+  static const String createdAt = 'created_at';
+  static const String createdBy = 'created_by';
+  static const String updatedAt = 'updated_at';
+  static const String updatedBy = 'updated_by';
+}

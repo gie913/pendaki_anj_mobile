@@ -1,0 +1,29 @@
+class UserEntity {
+  static const String id = 'id';
+  static const String code = 'code';
+  static const String name = 'name';
+  static const String email = 'email';
+  static const String emailVerifiedAt = 'email_verified_at';
+  static const String mRoleId = 'm_role_id';
+  static const String username = 'username';
+  static const String address = 'address';
+  static const String gender = 'gender';
+  static const String rememberToken = 'remember_token';
+  static const String mCompanyId = 'm_company_id';
+  static const String mCompanyCode = 'company_code';
+  static const String phoneNumber = 'phone_number';
+  static const String lastLogin = 'last_login';
+  static const String loginStatus = 'login_status';
+  static const String lastConnected = 'last_connected';
+  static const String mOccupationId = 'm_occupation_id';
+  static const String mDepartmentId = 'm_department_id';
+  static const String mMillId = 'm_mill_id';
+  static const String groupName = 'group_name';
+  static const String isActive = 'is_active';
+  static const String createdAt = 'created_at';
+  static const String createdBy = 'created_by';
+  static const String updatedAt = 'updated_at';
+  static const String updatedBy = 'updated_by';
+  static const String mEstateId = 'm_estate_id';
+  static const String canFilterCompany = 'can_filter_company';
+}
