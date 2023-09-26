@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pendaki_champion/base/palette.dart';
 import 'package:pendaki_champion/manager/storage_manager.dart';
@@ -6,11 +5,9 @@ import 'package:pendaki_champion/manager/storage_manager.dart';
 class ThemeNotifier with ChangeNotifier {
   final darkTheme = ThemeData(
     fontFamily: "DIN Pro",
-    primarySwatch: Colors.orange,
     primaryColor: Color(0xFF212121),
     brightness: Brightness.dark,
     dividerTheme: DividerThemeData(color: Colors.grey),
-    backgroundColor: Colors.black,
     appBarTheme: AppBarTheme(color: Colors.transparent),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
@@ -19,11 +16,16 @@ class ThemeNotifier with ChangeNotifier {
     ),
     scaffoldBackgroundColor: Colors.black,
     dividerColor: Colors.black,
+    colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.orange, brightness: Brightness.dark)
+        .copyWith(
+      background: Colors.black,
+      brightness: Brightness.dark,
+    ),
   );
 
   final lightTheme = ThemeData(
     fontFamily: "DIN Pro",
-    primarySwatch: Colors.orange,
     primaryColor: Palette.greenColor,
     primaryColorDark: Palette.greenColorDark,
     primaryColorLight: Palette.greenColorLight,
@@ -40,7 +42,10 @@ class ThemeNotifier with ChangeNotifier {
         backgroundColor: MaterialStateProperty.all(Palette.greenColor),
       ),
     ),
-    backgroundColor: Palette.greenColorLight,
+    colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.orange, brightness: Brightness.light)
+        .copyWith(
+            background: Palette.greenColorLight, brightness: Brightness.light),
   );
 
   ThemeData? _themeData;

@@ -63,7 +63,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         body: SingleChildScrollView(
           child: Center(
             child: Container(
-              height: MediaQuery.of(context).size.height - 100,
+              // height: MediaQuery.of(context).size.height - 100,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   colorFilter: ColorFilter.mode(
@@ -76,7 +76,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.45,
+                    // height: MediaQuery.of(context).size.height * 0.45,
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
@@ -97,8 +97,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   child: CachedNetworkImage(
                                     height: 100,
                                     width: 100,
-                                    imageUrl:
-                                        "${notifier.profile?.imageSrc}",
+                                    imageUrl: "${notifier.profile?.imageSrc}",
                                     imageBuilder: (context, imageProvider) =>
                                         Container(
                                       decoration: BoxDecoration(
@@ -144,7 +143,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 Text(
                                   "Job Code",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 16),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "${notifier.profile?.observer?.jobCode?.toTitleCase() ?? "-"}",
@@ -159,7 +159,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 Text(
                                   "Observer type",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 16),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "${notifier.profile?.observer?.isExternal == 1 ? "External Observer" : "Internal Observer"}",
@@ -174,7 +175,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 Text(
                                   "Phone",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 16),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "${notifier.profile?.phoneNumber ?? "-"}",
@@ -189,7 +191,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 Text(
                                   "Company Code",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 16),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "${notifier.profile?.observer?.companyCode ?? "-"}",
@@ -219,11 +222,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Total Found",
-                                textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.green),),
+                            Text(
+                              "Total Found",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.green),
+                            ),
                             Text(
                                 "${notifier.profile?.observer?.totalDiscovery ?? "-"}",
-                                textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.green)),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: Colors.green)),
                           ],
                         ),
                       ),

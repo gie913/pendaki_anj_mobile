@@ -9,5 +9,6 @@ class CameraService {
     if (xFile != null) {
       return xFile.path.toString();
     }
+    return null;
   }
 }

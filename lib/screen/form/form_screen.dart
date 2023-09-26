@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart' as pdp;
 import 'package:pendaki_champion/base/palette.dart';
 import 'package:pendaki_champion/base/strings.dart';
 import 'package:pendaki_champion/manager/text_manager.dart';
@@ -118,7 +118,9 @@ class _FormScreenState extends State<FormScreen> {
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                    "${notifier.tDiscovery.latinName?.capitalize() ?? ""}", style: TextStyle(fontStyle: FontStyle.italic),),
+                                  "${notifier.tDiscovery.latinName?.capitalize() ?? ""}",
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
                               ],
                             ),
                             SizedBox(height: 8),
@@ -139,9 +141,10 @@ class _FormScreenState extends State<FormScreen> {
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                             TextButton(
                                 onPressed: () {
-                                  DatePicker.showDatePicker(context,
+                                  // TODO: Check About Library
+                                  pdp.DatePicker.showDatePicker(context,
                                       showTitleActions: true,
-                                      theme: DatePickerTheme(
+                                      theme: pdp.DatePickerTheme(
                                           headerColor: Palette.primaryColorProd,
                                           backgroundColor: Colors.white,
                                           doneStyle: TextStyle(
@@ -153,7 +156,7 @@ class _FormScreenState extends State<FormScreen> {
                                     notifier.onChangeDate(date);
                                   },
                                       currentTime: DateTime.now(),
-                                      locale: LocaleType.en);
+                                      locale: pdp.LocaleType.en);
                                 },
                                 child: Text(
                                   '${notifier.selectedDate ?? "Choose date"}',

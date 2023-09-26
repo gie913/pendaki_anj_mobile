@@ -304,7 +304,7 @@ class _CameraScreenState extends State<CameraScreen>
       final XFile file = await cameraController.takePicture();
       return file;
     } on CameraException catch (e) {
-      WidgetsBinding.instance?.removeObserver(this);
+      WidgetsBinding.instance.removeObserver(this);
       _showCameraException(e);
       return null;
     }
