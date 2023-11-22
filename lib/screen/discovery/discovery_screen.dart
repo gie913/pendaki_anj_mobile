@@ -77,20 +77,19 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Total Discovery"),
-                        Text("${notifier.listTDiscovery.length}")
-                      ],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
                     ),
-                  )
-                ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Total Discovery"),
+                          Text("${notifier.listTDiscovery.length}")
+                        ],
+                      ),
+                    )),
               ),
               notifier.isLoading
                   ? Center(
@@ -130,17 +129,21 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: ListTile(
                                       leading: Hero(
-                                        tag: "${notifier.listTDiscovery[index].image}",
+                                        tag:
+                                            "${notifier.listTDiscovery[index].image}",
                                         child: SizedBox(
                                           width: 70,
                                           child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(6),
+                                            borderRadius:
+                                                BorderRadius.circular(6),
                                             child: Image.file(
                                               File(
                                                   "${notifier.listTDiscovery[index].image}"),
                                               fit: BoxFit.cover,
-                                              errorBuilder: (context, url, error) =>
-                                                  Image.asset("assets/photo-disp.png"),
+                                              errorBuilder: (context, url,
+                                                      error) =>
+                                                  Image.asset(
+                                                      "assets/photo-disp.png"),
                                             ),
                                           ),
                                         ),
@@ -176,9 +179,8 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
                                       ),
                                       trailing: InkWell(
                                         onTap: () {
-                                          notifier.deleteDiscovery(
-                                              notifier
-                                                  .listTDiscoveryResult[index]);
+                                          notifier.deleteDiscovery(notifier
+                                              .listTDiscoveryResult[index]);
                                         },
                                         child: Card(
                                           elevation: 3,
@@ -203,11 +205,12 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Image.asset("assets/orangutan.png", height: 100),
+                                  // Image.asset("assets/orangutan.png", height: 100),
                                   Text(
                                     "There is no Discovery",
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 15),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
                                   ),
                                 ],
                               ),

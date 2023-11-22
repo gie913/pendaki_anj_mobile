@@ -41,7 +41,6 @@ class _CameraScreenState extends State<CameraScreen>
     getCamera();
   }
 
-
   @override
   void dispose() {
     _ambiguate(WidgetsBinding.instance)?.removeObserver(this);
@@ -142,14 +141,14 @@ class _CameraScreenState extends State<CameraScreen>
           cameraController,
           child: LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
-                return GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onScaleStart: _handleScaleStart,
-                  onScaleUpdate: _handleScaleUpdate,
-                  onTapDown: (TapDownDetails details) =>
-                      onViewFinderTap(details, constraints),
-                );
-              }),
+            return GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onScaleStart: _handleScaleStart,
+              onScaleUpdate: _handleScaleUpdate,
+              onTapDown: (TapDownDetails details) =>
+                  onViewFinderTap(details, constraints),
+            );
+          }),
         ),
       );
     }
@@ -179,8 +178,8 @@ class _CameraScreenState extends State<CameraScreen>
       children: <Widget>[
         InkWell(
           onTap: cameraController != null &&
-              cameraController.value.isInitialized &&
-              !cameraController.value.isRecordingVideo
+                  cameraController.value.isInitialized &&
+                  !cameraController.value.isRecordingVideo
               ? onTakePictureButtonPressed
               : null,
           child: Card(
@@ -246,26 +245,26 @@ class _CameraScreenState extends State<CameraScreen>
           showInSnackBar('You have denied camera access.');
           break;
         case 'CameraAccessDeniedWithoutPrompt':
-        // iOS only
+          // iOS only
           showInSnackBar('Please go to Settings app to enable camera access.');
           break;
         case 'CameraAccessRestricted':
-        // iOS only
+          // iOS only
           showInSnackBar('Camera access is restricted.');
           break;
         case 'AudioAccessDenied':
           showInSnackBar('You have denied audio access.');
           break;
         case 'AudioAccessDeniedWithoutPrompt':
-        // iOS only
+          // iOS only
           showInSnackBar('Please go to Settings app to enable audio access.');
           break;
         case 'AudioAccessRestricted':
-        // iOS only
+          // iOS only
           showInSnackBar('Audio access is restricted.');
           break;
         case 'cameraPermission':
-        // Android & web only
+          // Android & web only
           showInSnackBar('Unknown permission error.');
           break;
         default:
@@ -304,7 +303,7 @@ class _CameraScreenState extends State<CameraScreen>
       final XFile file = await cameraController.takePicture();
       return file;
     } on CameraException catch (e) {
-      WidgetsBinding.instance.removeObserver(this);
+      WidgetsBinding.instance?.removeObserver(this);
       _showCameraException(e);
       return null;
     }

@@ -3,13 +3,16 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 class ScreenStyle {
   static Widget responsiveBuilder(BuildContext context, Widget? child) =>
-      ResponsiveBreakpoints.builder(
-        child: child!,
+      ResponsiveWrapper.builder(
+        BouncingScrollWrapper.builder(context, child!),
+        maxWidth: 1200,
+        minWidth: 450,
+        defaultScale: true,
         breakpoints: [
-          const Breakpoint(start: 0, end: 450, name: MOBILE),
-          const Breakpoint(start: 451, end: 800, name: TABLET),
-          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
-          const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+          ResponsiveBreakpoint.autoScale(450, name: MOBILE),
+          ResponsiveBreakpoint.autoScale(800, name: TABLET),
+          ResponsiveBreakpoint.autoScale(1000, name: DESKTOP),
+          ResponsiveBreakpoint.autoScale(double.infinity, name: '4K'),
         ],
       );
 

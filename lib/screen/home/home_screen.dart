@@ -142,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 padding: const EdgeInsets.all(20.0),
                                 child: Column(
                                   children: [
-                                    Image.asset("assets/orangutan.png"),
+                                    // Image.asset("assets/orangutan.png"),
                                     Text("There is no Species",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
