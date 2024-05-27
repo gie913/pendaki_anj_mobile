@@ -1,6 +1,6 @@
 class Strings {
   static const String appName = "Pendaki Champion";
-  static const String appVersion = "v.0.0.3";
+  static const String appVersion = "v.0.0.4";
   static const String poweredBy = "Powered by ANJ Group";
 
   static const String username = "Username";

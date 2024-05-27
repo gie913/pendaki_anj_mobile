@@ -12,8 +12,8 @@ class APIEndpoint {
   static const String removeImage = "/api/v1/remove-file/";
   static const String getGroupArea = "/api/v1/area-group";
 
-  static const String baseUrl =
-      "https://etrace-dev.anj-group.co.id/conservation/public/index.php";
   // static const String baseUrl =
-  //     "https://pendaki-dashboard.anj-group.co.id/public/index.php";
+  //     "https://etrace-dev.anj-group.co.id/conservation/public/index.php";
+  static const String baseUrl =
+      "https://pendaki-dashboard.anj-group.co.id/public/index.php";
 }

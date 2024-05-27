@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -123,14 +124,19 @@ class FormNotifier extends ChangeNotifier {
     _totalCount.text = "1";
   }
 
-  getLocation() {
-    LocationManager.getGPSLocation().then((value) {
-      _position = value;
-      _tDiscovery.gpsLng = _position?.longitude;
-      _tDiscovery.gpsLat = _position?.latitude;
-      _loading = false;
-      notifyListeners();
-    });
+  Future<void> getLocation() async {
+    log('cek : $_position');
+    while (_position == null) {
+      final data = await LocationManager.getGPSLocation();
+      if (data != null) {
+        _position = data;
+        _tDiscovery.gpsLng = _position?.longitude;
+        _tDiscovery.gpsLat = _position?.latitude;
+        _loading = false;
+        notifyListeners();
+      }
+    }
+    log('cek after : $_position');
   }
 
   generateTDiscovery(MSpecies mSpecies) async {
@@ -201,7 +207,7 @@ class FormNotifier extends ChangeNotifier {
   }
 
   onPressSave() async {
-    if(_selectedDate != null) {
+    if (_selectedDate != null) {
       if (_formKey.currentState!.validate()) {
         _dialogService.showOptionDialog(
             title: "Save Discovery",
