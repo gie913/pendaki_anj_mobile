@@ -30,35 +30,36 @@ class Profile {
   bool? canFilterCompany;
   Observer? observer;
 
-  Profile(
-      {this.id,
-        this.code,
-        this.name,
-        this.email,
-        this.emailVerifiedAt,
-        this.mRoleId,
-        this.username,
-        this.address,
-        this.gender,
-        this.rememberToken,
-        this.mCompanyId,
-        this.phoneNumber,
-        this.lastLogin,
-        this.loginStatus,
-        this.lastConnected,
-        this.mOccupationId,
-        this.mDepartmentId,
-        this.mMillId,
-        this.groupName,
-        this.isActive,
-        this.createdAt,
-        this.createdBy,
-        this.updatedAt,
-        this.updatedBy,
-        this.mEstateId,
-        this.imageSrc,
-        this.canFilterCompany,
-        this.observer});
+  Profile({
+    this.id,
+    this.code,
+    this.name,
+    this.email,
+    this.emailVerifiedAt,
+    this.mRoleId,
+    this.username,
+    this.address,
+    this.gender,
+    this.rememberToken,
+    this.mCompanyId,
+    this.phoneNumber,
+    this.lastLogin,
+    this.loginStatus,
+    this.lastConnected,
+    this.mOccupationId,
+    this.mDepartmentId,
+    this.mMillId,
+    this.groupName,
+    this.isActive,
+    this.createdAt,
+    this.createdBy,
+    this.updatedAt,
+    this.updatedBy,
+    this.mEstateId,
+    this.imageSrc,
+    this.canFilterCompany,
+    this.observer,
+  });
 
   Profile.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -126,5 +127,10 @@ class Profile {
       data['observer'] = this.observer!.toJson();
     }
     return data;
+  }
+
+  @override
+  String toString() {
+    return 'Profile(id: $id, code: $code, name: $name, email: $email, email_verified_at: $emailVerifiedAt, m_role_id: $mRoleId, username: $username, address: $address, gender: $gender, remember_token: $rememberToken, m_company_id: $mCompanyId, phone_number: $phoneNumber, last_login: $lastLogin, login_status: $loginStatus, last_connected: $lastConnected, m_occupation_id: $mOccupationId, m_department_id: $mDepartmentId, m_mill_id: $mDepartmentId, group_name: $groupName, is_active: $isActive, m_estate_id: $mEstateId, image_src: $imageSrc, can_filter_company: $canFilterCompany, observer: $observer)';
   }
 }

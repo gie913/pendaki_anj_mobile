@@ -19,24 +19,25 @@ class Observer {
   String? companyCode;
   Company? company;
 
-  Observer(
-      {this.id,
-        this.code,
-        this.name,
-        this.description,
-        this.jobCode,
-        this.phone,
-        this.mCompanyId,
-        this.isExternal,
-        this.isActive,
-        this.createdAt,
-        this.createdBy,
-        this.updatedAt,
-        this.updatedBy,
-        this.refUserId,
-        this.totalDiscovery,
-        this.companyCode,
-        this.company});
+  Observer({
+    this.id,
+    this.code,
+    this.name,
+    this.description,
+    this.jobCode,
+    this.phone,
+    this.mCompanyId,
+    this.isExternal,
+    this.isActive,
+    this.createdAt,
+    this.createdBy,
+    this.updatedAt,
+    this.updatedBy,
+    this.refUserId,
+    this.totalDiscovery,
+    this.companyCode,
+    this.company,
+  });
 
   Observer.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -56,7 +57,7 @@ class Observer {
     totalDiscovery = json['total_discovery'];
     companyCode = json['company_code'];
     company =
-    json['company'] != null ? new Company.fromJson(json['company']) : null;
+        json['company'] != null ? new Company.fromJson(json['company']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -81,5 +82,10 @@ class Observer {
       data['company'] = this.company!.toJson();
     }
     return data;
+  }
+
+  @override
+  String toString() {
+    return 'Observer(id: $id, code: $code, name: $name, description: $description, job_code: $jobCode, phone: $phone, m_company_id: $mCompanyId, is_external: $isExternal, ref_user_id: $refUserId, total_discovery: $totalDiscovery, company_code: $companyCode, company: $company)';
   }
 }

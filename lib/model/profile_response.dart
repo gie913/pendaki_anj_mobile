@@ -22,4 +22,9 @@ class ProfileResponse {
     }
     return data;
   }
+
+  @override
+  String toString() {
+    return 'ProfileResponse(success: $success, message: $message, data: $data)';
+  }
 }

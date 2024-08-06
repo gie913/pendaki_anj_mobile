@@ -17,24 +17,25 @@ class Company {
   double? gpsLat;
   String? email;
 
-  Company(
-      {this.id,
-        this.name,
-        this.code,
-        this.alias,
-        this.area,
-        this.industry,
-        this.address,
-        this.phoneNumber,
-        this.isActive,
-        this.createdAt,
-        this.createdBy,
-        this.updatedAt,
-        this.updatedBy,
-        this.mWorkflowId,
-        this.gpsLong,
-        this.gpsLat,
-        this.email});
+  Company({
+    this.id,
+    this.name,
+    this.code,
+    this.alias,
+    this.area,
+    this.industry,
+    this.address,
+    this.phoneNumber,
+    this.isActive,
+    this.createdAt,
+    this.createdBy,
+    this.updatedAt,
+    this.updatedBy,
+    this.mWorkflowId,
+    this.gpsLong,
+    this.gpsLat,
+    this.email,
+  });
 
   Company.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -76,5 +77,10 @@ class Company {
     data['gps_lat'] = this.gpsLat;
     data['email'] = this.email;
     return data;
+  }
+
+  @override
+  String toString() {
+    return 'Company(id: $id, name: $name, code: $code, alias: $alias, area: $area, industry: $industry, address: $address, phone_number: $phoneNumber, is_active: $isActive, created_at: $createdAt, created_by: $createdBy, updated_at: $updatedAt, updated_by: $updatedBy, m_workflow_id: $mWorkflowId, gps_long: $gpsLong, gps_lat: $gpsLat, email: $email)';
   }
 }

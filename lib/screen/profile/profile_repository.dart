@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -15,12 +16,18 @@ class ProfileRepository extends APIConfiguration {
       var response = await ioClient!
           .get(uri, headers: getDefaultHeaderWithToken(userToken));
 
-      ProfileResponse logOutResponse =
+      ProfileResponse profileResponse =
           ProfileResponse.fromJson(json.decode(response.body));
+      log('url : $url');
+      log('token : $userToken');
+
+      log('response : ${json.decode(response.body)}');
+      log('profileResponse : $profileResponse');
+
       if (response.statusCode == 200) {
-        onSuccess(context, logOutResponse);
+        onSuccess(context, profileResponse);
       } else {
-        onError(context, logOutResponse.message);
+        onError(context, profileResponse.message);
       }
     } on SocketException {
       onError(context, 'No Internet');
